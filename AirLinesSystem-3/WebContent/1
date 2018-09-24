@@ -1,0 +1,11 @@
+
+select * from (SELECT r1.* FROM route r1 
+inner join route r2 on r1.sourceid = r2.destinationid 
+where r1.sourceid='BOM') temp
+inner join route r3 on temp.destinationid = r3.sourceid 
+where r3.destinationid = 'JFK';
+
+SELECT r1.* FROM route r1 
+inner join route r2 on r1.sourceid = r2.destinationid
+where r1.sourceid='BOM';
+
